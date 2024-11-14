@@ -1,16 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Press Start 2P', cursive;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('imagenes/fondo.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('imagenes/tokyo-tower.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    color: #fff;
 }
 
 header {
-    background: #333;
+    background: rgba(128, 128, 128, 0.7);
     color: #fff;
     padding: 1rem 0;
     text-align: center;
@@ -37,8 +40,20 @@ section {
 
 #projects .project {
     background: #f4f4f4;
-    margin: 1rem 0;
-    padding: 1rem;
+    margin: 2rem; /* Margen externo para evitar que el efecto de agrandarse se salga de los límites */
+    padding: 2rem; /* Margen interno */
+    color:#000000;
+}
+#about .sobre {
+    background: rgba(0, 0, 0, 0.5); /* Fondo gris transparente */
+    color: #fff; /* Color del texto para que sea legible sobre el fondo */
+    margin: 2rem; /* Margen externo para evitar que el efecto de agrandarse se salga de los límites */
+    padding: 2rem; /* Margen interno */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: transform 0.3s ease-in-out; /* Transición suave para el efecto de alzarse */
+}
+#about .sobre:hover, #projects .project:hover {
+    transform: scale(1.05); /* Escala el elemento un 5% más grande */
 }
 
 #contact form {
@@ -58,9 +73,23 @@ section {
 }
 
 footer {
-    background: #333;
+    background: rgba(0, 0, 0, 0.7);
     color: #fff;
     text-align: center;
     padding: 1rem 0;
     margin-top: 2rem;
+    border-radius: 10px;
+}
+#typewriter {
+    font-family: monospace;
+    font-size: 2em;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.15em solid orange; 
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: orange; }
 }
